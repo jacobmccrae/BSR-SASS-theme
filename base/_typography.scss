@@ -1,0 +1,360 @@
+%center{
+	text-align: center;
+}
+
+.l-region--navigation{
+	// main menu
+	#block-system-main-menu, #block-menu-menu-mobile-menu{
+		ul.menu > li.leaf{
+			a{
+				@include breakpoint(480px 767px, true){
+					@include font-settings($size: 18px, $weight: bold);
+				}
+				
+				@include breakpoint(768px 1023px, true){
+					@include font-settings($size: 16px, $weight: bold);
+				}
+				
+				@include breakpoint(1024px 1199px, true){
+					@include font-settings($size: 18px, $weight: bold);
+				}
+				
+				@include breakpoint(1200px, true){
+					@include font-settings($size: 20px, $weight: bold);
+				}
+				
+				&:hover{
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
+
+body:not(.page-big-and-small-rescue) .l-main{
+	.l-content{
+		h1{
+			@include font-size(30px);
+			text-shadow: 2px 1px 5px $default-dk
+		}
+	}
+	
+	.l-region--sidebar-first{
+		#block-views-features-view-block .view-content{
+			.views-field-title{
+				@extend %center;
+			}
+		}
+	}
+}
+
+.l-footer .l-region--footer{
+	#block-views-footer-view-block .view-footer-view{
+		.view-header{
+			// big and small footer logo
+			#block-block-1{
+				@extend %center;
+			}
+			
+			// footer social media icons
+			.view-footer-social-menu{
+				.view-content{
+					p{							
+						@extend %center;
+					}
+				}
+			}
+			
+			@include breakpoint(0px 767px, true){
+				// big and small footer logo
+				#block-block-11, .view-footer-social-menu{
+					text-align: center;
+				}
+			}
+			
+			// footer contact form css settings
+			.view-contact-form{
+				// title settings
+				header h2{
+					@include font-settings($size: 20px, $weight: bold, $align: center);
+			
+					a{
+						text-decoration: none;
+					}
+				}
+				
+				label{
+					@include font-size(12px);
+				}
+			}
+		}
+		
+		// disclaimer settings
+		.view-footer{			
+			.view-power-design{
+				.view-header{
+					@include font-size(12px);
+				}
+			}
+		}
+	}
+	
+	// footer menu css settings
+	#block-menu-menu-footer-menu{
+		ul.menu > li.leaf{
+			@extend %center;
+			
+			a{
+				@include font-settings($size: 16px, $weight: bold);
+			}
+		}
+	}
+}
+
+.page-big-and-small-rescue{
+	.l-main .l-content{
+		// home page view
+		.view-big-and-small-rescue{
+			// features view
+			.view-content:first-of-type{
+				//side features
+				.views-row-2, .views-row-3, .views-row-4, .views-row-5{
+					.views-field-title, .views-field-field-image img{
+						@extend %center;
+						@include breakpoint(1024px 1199px, true){
+							@include font-size(14px);
+						}
+					}
+					
+					.views-field-title{
+						a{
+							@extend %center;
+						}
+					}
+				}
+			}
+			
+			.view-footer{
+				// css for adoptable dogs view
+				.view-adoptable-dogs{
+					.view-header > h3{
+						@include breakpoint(0px 767px, true){
+							@include font-settings($size: 16px, $weight: bold, $align: center);
+						}
+					}
+				
+					.view-content{
+						.views-view-grid{
+							td{
+								@extend %center;
+								@include breakpoint(0px 479px, true){
+									@include font-size(14px);
+								}
+							}
+						}
+					}
+				
+					// powered by petfinder disclaimer
+					.view-footer{
+						@include font-settings($size: 12px, $align: right);
+					}
+				}
+				
+				// css for happy tails view
+				.view-recent-adoptions{
+					.view-header > h3{
+						@include font-settings($size: 16px, $dec: underline, $align: center);
+						text-shadow: 0px 1px 1px $default-dk;
+					}
+					
+					.view-content{
+						.views-view-grid{								
+							td{
+								div.views-field-field-happy-tail-image{
+									@include breakpoint(768px 1023px, true){
+										text-align: center;
+									}
+								}
+								
+								// centered title
+								.views-field-title{								
+									@include breakpoint(0px 479px, true){
+										@include font-settings($size: 12px, $weight: bold);
+										text-shadow: 1px 1px 1px $default-lt;
+									}
+									@include breakpoint(480px 767px, true){
+										@include font-settings($size: 15px, $weight: bold);
+										text-shadow: 1px 1px 1px $default-dk;
+									}
+									@include breakpoint(768px 1023px, true){
+										@include font-settings($size: 16px, $weight: bold, $align: center);
+									}
+									@include breakpoint(1024px 1199px, true){
+										@include font-settings($size: 18px, $weight: bold, $align: center);
+									}
+									@include breakpoint(1200px, true){
+										@include font-settings($size: 20px, $weight: bold, $align: center);
+									}
+								}
+								
+								// centered date
+								.views-field-field-date-adopted{
+									@include breakpoint(0px 767px, true){
+										@include font-settings($size: 12px, $weight: bold);
+									}
+									
+									@include breakpoint(0px 479px, true){
+										text-shadow: 1px 1px 1px $default-lt;
+									}
+									@include breakpoint(480px 767px, true){
+										text-shadow: 1px 1px 1px $default-dk;
+									}
+									@include breakpoint(768px 1199px, true){
+										@include font-settings($size: 12px, $weight: bold, $align: center);
+									}
+									@include breakpoint(1200px, true){
+										@include font-settings($size: 13px, $weight: bold, $align: center);
+									}
+								}
+								
+								// happy tail description box
+								.views-field-field-happy-tail-description{
+									p{
+										text-align: justify;
+										font-family: $font-type;
+										
+										@include breakpoint(0px 767px, true){
+											@include font-size(12px);
+										}
+										
+										@include breakpoint(768px 1199px, true){
+											@include font-size(13px);
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				
+				.view-about-big-and-small{
+					.view-header > h3{
+						@include breakpoint(0px 1023px, true){
+							text-align: center;
+						}
+					}
+				
+					.view-content{
+						.views-view-grid{								
+							td{
+								.views-field-body{
+									.field-content{
+										@extend %center;
+									}			
+								}
+								
+								.views-field-title{
+									@extend %center;
+									@include breakpoint(0px 1023px, true){
+										line-height: 30px;
+									}
+									a{
+										&:hover{
+											text-decoration: underline;
+										}
+										
+										@include breakpoint(0px 767px, true){
+											@include font-settings($size: 14px, $weight: bold);
+										}
+										
+										@include breakpoint(768px 1199px, true){
+											@include font-settings($size: 16px, $weight: bold);
+										}
+										
+										@include breakpoint(1200px, true){
+											@include font-settings($size: 18px, $weight: bold);
+										}
+									}
+								}
+							}
+							
+							.col-2 .views-field-body{
+								.field-content{
+									text-align: left;
+								}
+							}
+							
+							.col-3 .views-field-body{
+								.field-content{
+									p{
+										@include font-settings($size: 16px, $weight: bold, $align: center);
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.node-type-dog{
+	.l-main .l-content article{
+		font-family: $font-type;
+		
+		// all dog fields
+		div.field{
+			// dog labels
+			.field__label{
+				text-decoration: underline;
+			}
+		}
+		
+		// dog picture
+		div.field.field--name-field-image{
+			text-align: left;
+			
+			@include breakpoint(480px 767px, true){
+				& > div > div.field__item > img{
+					text-align: center;
+				}
+			}
+		}
+		
+		div.field.field--name-field-dog-age, div.field.field--name-field-dog-size, div.field.field--name-field-dog-breed, div.field--name-field-dog-status{
+			@include breakpoint(0px 479px){
+				@include font-size(15px);
+			}
+			
+			@include breakpoint(480px 1199px, true){
+				@include font-size(16px);
+			}
+		}
+		
+		div.field.field--name-field-dog-status{
+			line-height: 25px;
+			text-align: center;
+		}
+		
+		// dog description
+		div.field.field--name-body{
+			text-align: justify;
+			@include breakpoint(0px 579px){
+				@include font-size(12px);
+			}
+			
+			@include breakpoint(580px 1199px, true){
+				@include font-size(14px);
+			}
+		}
+		
+		@include breakpoint(1200px 1499px, true){
+			@include font-size(15px);
+		}
+		
+		@include breakpoint(1500px, true){
+			@include font-size(17px);
+		}
+	}
+}

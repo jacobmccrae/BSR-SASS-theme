@@ -1,0 +1,75 @@
+// this file contains settings for most forms found throughout the website
+
+.l-region--footer #block-views-footer-view-block .view-footer-view{
+	
+	// footer contact form css settings
+	.view-contact-form{
+		height: 300px;
+	
+		@include breakpoint(0px 1023px, true){
+			width: 100%;
+		}
+	
+		@include breakpoint(480px, true){
+			padding: 0em 1em 2em;
+		}
+		
+		// title settings
+		header h2{
+			// also sets margin to 0
+			@include dim-set($w: 100%, $pdim: 1.75em 0 0 0);
+		}
+		
+		.form-item{
+			margin-bottom: 0.5em;
+		}				
+		
+		input, textarea, .grippie{
+			width: 100%;
+		}
+		
+		// reason for contact option settings
+		#webform-component-reason-for-contact{
+			label:first-of-type{
+				float: left;
+				width: 15%;
+			}
+			label.option{
+				float: none;
+				
+				@include breakpoint(0px 479px, true){
+					margin-right: 3em;
+				}
+				
+				@include breakpoint(1024px 1199px, true){
+					margin-right: 2.25em;
+				}
+				
+				@include breakpoint(1200px 1499px, true){
+					margin-right: 3em;
+				}
+			}
+			
+			#edit-submitted-reason-for-contact{
+				div.form-item{
+					width: 10%;
+					input{
+						width: 5%;
+					}
+				}
+			}
+		}
+		
+		// contact form button
+		#edit-actions{
+			padding-top: 1em;
+			input{
+				float: right;
+				
+				@include breakpoint(1200px, true){
+					width: 20%;
+				}	
+			}
+		}
+	}
+}

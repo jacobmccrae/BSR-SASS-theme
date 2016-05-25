@@ -1,0 +1,334 @@
+// this file contains a majority of the settings for tables and table elements
+// if table elements found in another file, this is due to rendering order
+
+// table settings for home page view
+.view-big-and-small-rescue .view-footer{
+
+	// adoptable dog settings
+	.view-adoptable-dogs .view-content{	
+		.views-view-grid{
+			@include dim-set($w: 95%, $mdim: 0 auto);
+			td{
+				@include padding-set(0.5em auto);
+			
+				@include breakpoint(0px 479px, true){
+					padding-left: 0.25em;
+					padding-right: 0.25em;
+				}
+			
+				@include breakpoint(480px, true){
+					padding-left: 0.75em;
+					padding-right: 0.75em;
+				}
+	
+				.views-field-title{
+					padding: 0.5em;
+				}
+			}
+		}
+	}
+	
+	// happy tails settings
+	.view-recent-adoptions .view-content{
+		.views-view-grid{
+			@include breakpoint(480px 767px, true){
+				@include dim-set($w: 100%, $marg: false, $pad: false);
+			}
+			
+			td.col-1, td.col-2{
+				@include breakpoint(0px 479px, true){
+					@include margin-set(0.5em 0em);
+				}
+			
+				@include breakpoint(480px 767px, true){
+					@include dim-set($w: 100%, $mdim: 0.5em 0em);
+				}
+			
+				@include breakpoint(768px 1023px, true){
+					@include dim-set($pdim: 1.25em 0em, $mloc: margin-right);
+				}
+			}
+			
+			td.col-2{
+				@include breakpoint(0px 479px, true){
+					@include margin-set(0.5em 0em 1em);
+				}
+			
+				@include breakpoint(480px 767px, true){
+					@include margin-set(0em 0em 0.5em);
+				}
+			}
+		
+			td{
+				@include breakpoint(0px 767px){
+					display: inline-block;
+					position: relative;
+					-webkit-transform: translate3d(0,0,0);
+				}
+				
+				@include breakpoint(0px 479px, true){
+					@include dim-set($w: 100%, $h: 250px, $pad: false, $marg: false);
+				}
+			
+				@include breakpoint(480px 767px, true){
+					@include dim-set($w: 100%, $pdim: false, $marg: false);
+				}
+			
+				@include breakpoint(1024px 1199px, true){
+					@include dim-set($pdim: 0.5em 1em 0.25em, $mloc: margin-right);
+					@include layout(3){
+						// stamp happy tail image
+						div.views-field-field-happy-tail-image{
+							@include grid-span(2, 1.05);
+						}
+					}
+				}
+				
+				@include breakpoint(1200px, true){
+					@include dim-set($pdim: 0.5em 2em 0.25em, $mloc: margin-right);
+					@include layout(5){
+						// stamp happy tail image
+						div.views-field-field-happy-tail-image{
+							@include grid-span(2.5, 1.25);
+						}
+					}
+				}
+				
+				// stamp happy tail image
+				div.views-field-field-happy-tail-image{
+					@include breakpoint(0px 767px, true){
+						margin-left: 0.25em;
+					}
+					@include breakpoint(1024px, true){
+						margin-bottom: 1em;
+					}
+				}
+					
+				
+				.views-field-title{
+					@include breakpoint(0px 767px, true){
+						@include positions(absolute, $lt: 2%);
+					}
+				
+					@include breakpoint(480px 767px, true){
+						@include dim-set($mdim: 0.15em, $mloc: margin-top, $pad: false);
+						top: 70%;
+					}
+				
+					// centered title, inline with happy tail image
+					@include breakpoint(768px 1023px, true){
+						@include dim-set($mdim: 0.5em, $mloc: margin-top, $pad: false);
+					}
+					
+					@include breakpoint(1024px, true){
+						float: right;
+						@include dim-set($mdim: 1.5em, $mloc: margin-top, $pad: false);
+					}
+				
+					@include breakpoint(1024px 1199px, true){
+						width: 40%;
+					}
+						
+					@include breakpoint(1200px, true){
+						width: 50%;
+					}
+				}
+			
+				.views-field-field-date-adopted{
+					@include breakpoint(0px 767px, true){
+						@include positions(absolute, $lt: 2%);
+					}
+					@include breakpoint(0px 479px, true){
+						bottom: 25%;
+					}
+					
+					@include breakpoint(480px 767px, true){
+						top: 85%;
+					}
+				
+					@include breakpoint(768px 1023px, true){
+						@include dim-set($mdim: 0.5em, $mloc: margin-top, $pad: false);
+					}
+					
+					// centered date, inline with happy tail image, below title
+					@include breakpoint(1024px, true){
+						float: right;
+						clear: right;
+						@include dim-set($mdim: 0.75em, $mloc: margin-top, $pad: false);
+					}
+				
+					@include breakpoint(1024px 1199px, true){
+						width: 40%;
+					}
+						
+					@include breakpoint(1200px, true){
+						width: 50%;
+					}												
+					
+					.field-content{
+						display: inline;
+					}
+				}
+				
+				// happy tail description box
+				.views-field-field-happy-tail-description{
+					@include breakpoint(0px 767px, true){
+						@include positions(absolute, $tp: 0%, $rt: 0.5%);
+						min-height: 150px;
+					}
+					
+					@include breakpoint(0px 479px, true){
+						width: 50%;
+					}
+				
+					@include breakpoint(480px 767px, true){
+						width: 70%;
+					}
+					
+					@include breakpoint(768px 1023px, true){
+						min-height: 175px;
+						margin-top: 0.25em;
+					}
+				
+					@include breakpoint(1024px, true){
+						// also sets padding to 0
+						@include dim-set($mdim: 0.25em, $mloc: margin-bottom);
+						clear: both;
+					}
+					
+					background-color: $ra-desc-bg;
+				
+					p{
+						// also sets margin to 0
+						@include dim-set($pdim: 0.5em);
+					}
+				}
+			}
+		}
+	}
+
+	// about BS css settings, creates rounded boxes with teaser content
+	div.view.view-about-big-and-small .view-content{
+		.views-view-grid{
+			td{
+				@include breakpoint(0px 1023px, true){
+					@include dim-set($w: 100%, $mdim: 0.25em 0em, $pad: false);
+					display: inline-block;
+					position: relative;
+					-webkit-transform: translate3d(0,0,0);
+					
+					#inner-table-rc{
+						& > tbody > tr > td{
+							display: table-cell;
+							width: 20%;
+						}
+					}					
+				}
+			
+				@include breakpoint(1024px 1199px, true){
+					@include dim-set($w: 33%, $mdim: 0.5em, $pad: false);
+				}
+			
+				@include breakpoint(1200px, true){
+					@include dim-set($w: 30%, $mdim: 1em, $pad: false);
+				}
+				
+				// rounded box body
+				div.views-field-body{
+					@include breakpoint(0px, true){
+						@include dim-set($h: 200px, $mdim: 0em auto, $pdim: 0.25em);
+					}
+				
+					@include breakpoint(0px 1023px, true){
+						width: 100%;
+						
+						p{
+							@include dim-set($w: 60%, $mdim: 0em auto, $pad: false);
+						}
+					}
+					@include breakpoint(1024px, true){
+						width: 95%;
+					}					
+				}
+				
+				.views-field-title{
+					@include breakpoint(0px 1023px, true){
+						@include positions(absolute, $tp: 0.5%, $lt: 0.15%);						
+						@include dim-set($h: 198px, $pdim: 1.25em, $ploc: padding-top, $marg: false);
+					}
+				
+					//title is on left of body
+					@include breakpoint(0px 479px, true){
+						width: 16%;
+					}
+					
+					//title is on left of body
+					@include breakpoint(480px 1023px, true){
+						width: 13%;
+					}
+					
+					// title sits below body
+					@include breakpoint(768px, true){
+						padding-top: 1em;
+					}
+					
+					//title is on left of body
+					@include breakpoint(768px 1023px, true){	
+						width: 9%;
+					}
+				}
+				
+
+			}
+			
+			// specific css for each column in this view
+			.col-1{
+				@include breakpoint(0px 1023px, true){
+					margin-top: 0;
+				}
+			
+				& > div.views-field-body{
+					.field-content{
+						@include breakpoint(0px 479px, true){
+							padding-top: 3em;
+						}
+					
+						@include breakpoint(480px 767px, true){
+							padding-top: 3.5em;
+						}
+					
+						@include breakpoint(768px, true){
+							padding-top: 4em;
+						}
+						p{
+							@include padding-set(0em 0.25em);
+						}
+					}
+				}
+			}
+			
+			.col-2{ 
+				& > div.views-field-body{
+					.field-content{
+						padding-top: 1.5em;
+						td{
+							padding: 0.15em 0.25em;
+						}
+					}
+				}
+			}
+
+			.col-3.col-last > div.views-field.views-field-body{
+				.field-content{
+					padding-top: 1.25em;
+					p:first-of-type{
+						padding-top: 0.75em;
+					}
+					p{
+						padding-bottom: 1em;
+					}
+				}
+			}
+		}
+	}
+}
