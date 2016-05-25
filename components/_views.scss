@@ -1,0 +1,267 @@
+// this file contains the settings for most of the views found throughout the website
+// if some settings are not found here, they will be in a more design specific file
+// based on the design setting
+
+// main footer css settings
+.l-footer .l-region--footer{
+	#block-views-footer-view-block .view-footer-view{
+		@include breakpoint(0px 767px, true){
+			.view-header{
+				position: relative;
+				-webkit-transform: translate3d(0,0,0);
+			
+				#block-block-11, .view-footer-social-menu, .view-contact-form{
+					position: absolute;
+				}
+				
+				#block-block-11, .view-footer-social-menu{
+					width: 100%;
+				}
+				
+				// big and small footer logo
+				#block-block-11{
+					bottom: 33%;
+				}
+				
+				// footer social media icons
+				.view-footer-social-menu{
+					bottom: 2%;
+				}				
+			}
+		}
+		
+		@include breakpoint(768px 1023px, true){
+			.view-header{
+				position: relative;
+				-webkit-transform: translate3d(0,0,0);
+			
+				#block-block-7, .view-footer-social-menu, .view-contact-form{
+					position: absolute;
+				}
+				
+				// big and small footer logo
+				#block-block-7{
+					left: 10%;
+					bottom: 9%;
+				}
+				
+				// footer social media icons
+				.view-footer-social-menu{
+					right: 2%;
+					bottom: 10%;
+					width: 50%;
+				}				
+			}
+		}
+		
+		
+		@include breakpoint(1024px 1199px, true){
+			@include layout(6){
+				.view-header{
+					// big and small footer logo
+					#block-block-7{
+						@include grid-span(2,1.25);
+					}
+					
+					// footer social media icons
+					.view-footer-social-menu{
+						@include grid-span(2,2.75);
+					}
+					
+					// footer contact form css settings
+					.view-contact-form{
+						@include grid-span(2,4.75);
+					}
+				}
+			}
+		}
+		
+		@include breakpoint(1200px 1499px, true){
+			@include layout(9){
+				.view-header{
+					// big and small footer logo
+					#block-block-7{
+						@include grid-span(3,1.5);
+					}
+					
+					// footer social media icons
+					.view-footer-social-menu{
+						@include grid-span(3,3.5);
+					}
+					
+					// footer contact form css settings
+					.view-contact-form{
+						@include grid-span(3,6.5);
+					}
+				}
+			}
+		}
+		
+		@include breakpoint(1500px, true){
+			@include layout(12){		
+				.view-header{
+					// big and small footer logo
+					#block-block-1{
+						@include grid-span(3.5,1.65);
+					}
+					
+					// footer social media icons
+					.view-footer-social-menu{
+						@include grid-span(3.5,4.75);
+					}
+					
+					// footer contact form css settings
+					.view-contact-form{
+						@include grid-span(3.75,8.5);
+					}
+				}
+			}
+		}
+	
+		.view-header{
+			@include breakpoint(0px 767px, true){
+				height: 900px;
+			}
+		
+			@include breakpoint(768px 1023px, true){
+				height: 750px;
+			}
+		
+			@include breakpoint(1024px, true){
+				height: 450px;
+			}
+			
+			.view-footer-social-menu, .view-contact-form{
+				@include breakpoint(1024px, true){
+					height: 375px;
+				}
+			}
+			
+			#block-block-7{
+				@include breakpoint(1024px 1499px, true){
+					height: 375px;
+				}
+				
+				@include breakpoint(1024px 1199px, true){
+					padding-top: 6em;
+				}
+			
+				@include breakpoint(1200px 1499px, true){
+					padding-top: 4em;
+				}
+			}
+			
+			// big and small footer logo
+			#block-block-1{
+				@include breakpoint(1500px){
+					padding-top: 2.25em;
+					height: 375px;
+				}
+			}
+			
+			
+			// footer social media icons
+			.view-footer-social-menu{
+				
+				.view-header{
+					//also sets height to initial
+					@include dim-set($pdim: initial, $marg: false);
+				}
+					
+				.view-content{
+					p{							
+						a{
+							padding: 0.25em;
+							img{
+								@include breakpoint(0px 1199px, true){
+									@include dim-set($w: 40px, $h: 40px, $pad: false, $marg: false);
+								}
+							
+								@include breakpoint(1200px, true){
+									@include dim-set($w: 45px, $h: 45px, $pad: false, $marg: false);
+								}
+							}
+						}
+						a:first-of-type{
+							margin-left: 0.25em;
+						}
+					}
+				}
+			}
+		}
+		
+		// rescue sponsor "stamps"
+		div.view-content{
+			
+			.views-view-grid{
+				@include breakpoint(0px 767px, true){
+					margin: 1.5em 0em;
+				}
+				
+				@include breakpoint(768px 1023px, true){
+					@include dim-set($pdim: 0.5em, $mdim: 1.5em 2em);
+				}
+				
+				td{
+					@include breakpoint(0px 767px, true){
+						display: inline-block;
+					}
+				
+					& > div{
+						@include breakpoint(768px 1023px, true){
+							width: 60%;
+						}
+					}
+				}
+				
+				tr.row-1.row-first{
+					@include breakpoint(768px 1023px, true){
+						float: left;
+						margin-bottom: 1em;
+					}
+				}
+				
+				tr.row-2.row-last{
+					@include breakpoint(768px, true){
+						float: right;
+					}
+					
+					td.col-1.col-first > div{
+						@include breakpoint(768px 1023px, true){
+							@include dim-set($w: 60%, $mdim: -15em, $mloc: margin-right, $pad: false);
+						}
+					}
+
+					td.col-2.col-last > div{
+						@include breakpoint(768px 1023px, true){
+							@include dim-set($w: 50%, $mdim: 5em, $mloc: margin-right, $pad: false);
+						}
+					}
+				}
+			}
+		}
+
+		// disclaimer settings
+		.view-footer{
+			clear: both;
+			
+			.view-power-design{
+				.view-header{
+					@include dim-set($h: 30px, $pdim: 0, $marg: false);
+					
+					// designed by mcwebs
+					#block-block-2{
+						@include padding-set(0.75em 0 0 1em);
+						float: left;
+					}
+					
+					// powered by drupal
+					#block-system-powered-by{
+						@include padding-set(0.75em 1em 0 0);
+						float: right;
+					}
+				}
+			}
+		}
+	}
+}

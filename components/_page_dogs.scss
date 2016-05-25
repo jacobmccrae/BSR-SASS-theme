@@ -1,0 +1,246 @@
+.node-type-dog{
+	.l-main .l-content article{
+		position: relative;
+		-webkit-transform: translate3d(0,0,0);
+		
+		@include breakpoint(0px 479px, true){
+			padding: 0em 0.25em 0.25em;
+		}
+		
+		@include breakpoint(480px 579px, true){
+			padding: 0.5em;
+		}
+		
+		@include breakpoint(580px 1199px, true){
+			padding: 0.5em 1em;
+		}
+		
+		// all dog fields
+		div.field{
+			@include breakpoint(0px 579px, true){
+				padding-top: 0.25em;
+			}
+		
+			@include breakpoint(580px, true){
+				padding-top: 0.5em;
+			}
+		
+			@include breakpoint(480px 767px, true){
+				width: 30%;
+			}
+			
+			@include breakpoint(768px, true){
+				width: 25%;
+			}
+			
+			// dog labels
+			.field__label{
+				margin-right: 0.5em;
+			}
+		}
+		
+		// dog picture
+		div.field.field--name-field-image{
+			margin-left: 0;
+			padding-top: 0;
+			
+			@include breakpoint(0px 1499px, true){
+				margin-bottom: 1em;
+			}
+			
+			@include breakpoint(0px 479px, true){
+				width: 150px;
+			}
+			
+			@include breakpoint(480px 579px, true){
+				width: 275px;
+			}
+			
+			@include breakpoint(580px, true){
+				clear: both;
+			}
+		
+			@include breakpoint(580px 1199px, true){
+				width: 200px;
+			}
+		
+			@include breakpoint(1200px 1499px, true){
+				width: 300px;
+			}
+			
+			@include breakpoint(1500px, true){
+				width: 500px;
+			}						
+		}
+		
+		div.field.field--name-field-dog-status{
+			@include positions(absolute, $tp: 0%);
+			
+			@include breakpoint(0px 479px, true){
+				width: 151px;
+			}
+			
+			@include breakpoint(480px 579px, true){
+				width: 276px;
+			}
+		
+			@include breakpoint(580px 1199px, true){
+				width: 201px;
+			}
+		
+			@include breakpoint(1200px 1499px, true){
+				width: 301px;
+			}
+			
+			@include breakpoint(1500px, true){
+				width: 501px;
+			}
+			
+			@include dim-reset();
+		}
+		
+		// dog age - left
+		div.field.field--name-field-dog-age{
+			@include breakpoint(0px 579px){
+				position: absolute;
+			}
+			
+			@include breakpoint(0px 479px){
+				top: 30%;
+				left: 160px;
+			}
+		
+			@include breakpoint(480px 579px, true){
+				top: 35%;
+				left: 290px;
+			}
+			
+			@include breakpoint(580px, true){
+				float: left;
+			}
+			
+			@include breakpoint(580px 1023px, true){
+				@include margin-set($mdim: 0em 1em 0em 0em);
+			}
+			
+			@include breakpoint(1024px 1499px, true){
+				@include margin-set($mdim: 0em 2em 0em 0em);
+			}
+			
+			@include breakpoint(1500px, true){
+				margin-left: 2em;
+			}
+		}
+		
+		// dog size - middle
+		div.field.field--name-field-dog-size{
+			@include breakpoint(0px 579px){
+				position: absolute;
+			}
+			
+			@include breakpoint(0px 479px){
+				top: 35%;
+				left: 160px;
+			}
+		
+			@include breakpoint(480px 579px, true){
+				top: 40%;
+				left: 290px;
+			}
+			
+			@include breakpoint(580px, true){
+				float: left;
+			}
+		}
+		
+		// dog breed - right
+		div.field.field--name-field-dog-breed{
+			@include breakpoint(0px 579px){
+				position: absolute;
+			}
+			
+			@include breakpoint(0px 479px){
+				top: 40%;
+				left: 160px;
+			}
+		
+			@include breakpoint(480px 579px, true){
+				top: 45%;
+				left: 290px;
+			}
+			
+			@include breakpoint(580px 1499px, true){
+				float: right;
+			}
+			
+			@include breakpoint(580px 767px, true){				
+				// also sets right margin to 0
+				@include dim-set($w: 35%, $mloc: margin-right, $pdim: 0.25em, $ploc: padding-top);
+			}
+			
+			@include breakpoint(768px 1499px, true){
+				// also sets right margin to 0
+				@include dim-set($w: 45%, $mloc: margin-right, $pdim: 0.5em, $ploc: padding-top);
+			}
+			
+			@include breakpoint(1500px, true){
+				float: left;
+				width: 40%;
+			}
+		}
+		
+		// dog description
+		div.field.field--name-body{
+			padding: 1em 0.5em;
+			clear: both;
+		
+			@include breakpoint(1024px 1199px, true){
+				min-height: 250px;
+			}
+			
+			@include breakpoint(0px 579px, true){
+				width: 95%;
+			}
+			
+			@include breakpoint(480px, true){
+				position: absolute;
+			}
+			
+			@include breakpoint(480px 579px, true){
+				bottom: 0%;
+			}
+			
+			@include breakpoint(580px 1023px, true){
+				top: 2%;
+				width: 50%;
+			}
+			
+			@include breakpoint(580px 767px, true){
+				right: 5%;
+			}
+			
+			@include breakpoint(768px 1023px, true){
+				right: 10%;
+			}
+			
+			@include breakpoint(1024px 1199px, true){
+				right: 4%;
+			}
+			
+			@include breakpoint(1024px 1499px, true){
+				top: 1%;
+				width: 50%;
+			}
+			
+			@include breakpoint(1200px 1499px){
+				right: 2%;
+			}
+			
+			@include breakpoint(1500px, true){
+				top: 1.5%;
+				right: 4%;
+				width: 55%;
+			}
+		}
+	}
+}

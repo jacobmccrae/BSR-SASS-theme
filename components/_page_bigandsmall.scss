@@ -1,0 +1,252 @@
+// this file contains a majority of the page settings for the home page view
+// more settings for this page can be found in other files as well that are 
+// more design specific thus easier to locate
+
+.page-big-and-small-rescue{
+	.l-main .l-content{
+		margin: 0 auto;
+		
+		@include layout(1){
+			@include breakpoint(0px 767px, true){
+				margin-top: 0em;
+			}
+			
+			@include breakpoint(768px 1023px, true){
+				margin-top: 2em;
+			}
+			
+			@include breakpoint(1024px, true){
+				margin-top: 3em;
+			}
+			
+			// home page view
+			.view-big-and-small-rescue{
+				// features view
+				.view-content:first-of-type{
+				
+					.views-row{
+						position: relative;
+						-webkit-transform: translate3d(0,0,0);
+					}
+					
+					@include breakpoint(1024px 1199px, true){
+						@include layout(6){
+							// main feature
+							.views-row-1{
+								@include grid-span(4, 1.25);
+							}
+						}
+					}
+					
+					@include breakpoint(1200px 1499px, true){
+						@include layout(9){
+							// main feature
+							.views-row-1{
+								@include grid-span(6, 1.5);
+							}
+						}
+					}
+					
+					@include breakpoint(1500px, true){
+						@include layout(12){
+							// main feature
+							.views-row-1{
+								@include grid-span(8, 1.75);
+							}
+						}
+					}
+					
+					// main feature
+					.views-row-1{
+						@include breakpoint(768px 1023px, true){
+							.views-field-field-image img{
+								width: 100%;
+							}
+						}
+					
+						@include breakpoint(1024px, true){
+							float: left;
+						}
+					}
+
+					//side features
+					.views-row-2, .views-row-3, .views-row-4, .views-row-5{
+						margin-bottom: 0.25em;
+					
+						@include breakpoint(0px 479px, true){
+							@include dim-set($w: 30%, $mdim: 0.25em 0em 0.25em 0.5em, $pad: false);
+							float: left;
+						}
+					
+						@include breakpoint(480px 767px, true){
+							@include dim-set($w: 20%, $mdim: 0.5em, $pad: false);
+							float: left;
+						}
+					
+						@include breakpoint(768px 1023px, true){
+							@include dim-set($w: 20%, $mdim: 1em, $pad: false);
+							float: left;
+						}
+					
+						@include breakpoint(1024px, true){
+							float: right;
+						}
+					
+						@include breakpoint(1024px 1199px, true){
+							right: 5.5%;
+						}
+					
+						@include breakpoint(1200px 1499px, true){
+							right: 5%;
+						}
+					
+						@include breakpoint(1500px, true){
+							right: 10%;
+						}
+						
+						// feature title placed a bottom of img
+						.views-field-title{
+							@include positions(absolute, $bt: 0%);							
+							@include dim-set($w: 100%, $pdim: 0.25em, $marg: false);
+						}
+						
+						.views-field-field-image img{
+							@include breakpoint(0px 479px, true){
+								@include dim-set($w: 200px, $h: 175px, $pad: false, $marg: false);
+							}
+							
+							@include breakpoint(480px 767px, true){
+								@include dim-set($w: 175px, $h: 150px, $pad: false, $marg: false);
+							}
+						
+							@include breakpoint(768px 1023px, true){
+								@include dim-set($w: 220px, $h: 220px, $pad: false, $marg: false);
+							}
+						
+							@include breakpoint(1024px 1199px, true){
+								@include dim-set($w: 175px, $h: 175px, $pad: false, $marg: false);
+							}
+							
+							@include breakpoint(1200px 1499px, true){
+								@include dim-set($w: 175px, $h: 205px, $pad: false, $marg: false);
+							}
+						
+							@include breakpoint(1500px, true){
+								@include dim-set($w: 180px, $h: 210px, $pad: false, $marg: false);
+							}
+						}
+					}
+					
+					.views-row-2{
+						@include breakpoint(480px 767px, true){
+							margin-left: 5%;
+						}
+					
+						@include breakpoint(768px 1023px, true){
+							margin-left: 4.25%;
+						}
+					}
+					
+					.views-row-3{					
+						@include breakpoint(1024px, true){
+							clear: right;
+						}
+					}
+				}
+
+				.view-footer{
+					clear: left;
+					
+					@include breakpoint(0px 767px, true){
+						padding-top: 5em;
+					}
+					
+					@include breakpoint(768px 1199px, true){
+						padding-top: 10em;
+					}
+					
+					@include breakpoint(1200px, true){
+						padding-top: 15em;
+					}
+				
+					// css for adoptable dogs view
+					.view-adoptable-dogs{
+						@include breakpoint(0px 479px, true){
+							ul.pager{
+								margin: 0.25em 0em 1.5em;
+								
+								& > li.pager__item{
+									padding: 0.25em;
+								}
+							}
+						}
+						@include breakpoint(1024px, true){
+							@include dim-set($w: 95%, $mdim: 0 auto 2em, $pad: false);
+						}
+					
+						.view-header > h3{
+							@include dim-reset;
+						}
+						
+						// powered by petfinder disclaimer
+						.view-footer{
+							@include padding-set(0 0.25em 0 0);
+						}
+					}
+					
+					// css for happy tails view
+					.view-recent-adoptions{
+						@include breakpoint(0px 767px){
+							@include dim-set($mdim: 5em auto, $pdim: 0.5em);
+						}
+					
+						@include breakpoint(0px 479px, true){
+							height: 840px;
+						}
+						
+						@include breakpoint(768px 1199px, true){
+							@include dim-set($mdim: 10em auto, $pad: false);
+						}
+					
+						@include breakpoint(1200px, true){
+							@include dim-set($mdim: 15em auto, $pad: false);
+						}
+
+						.view-header > h3{
+							@include breakpoint(0px, true){
+								// also sets margin to 0
+								@include dim-set($pdim: 0.25em 0em 0.15em);
+							}
+						
+							@include breakpoint(0px 767px, true){
+								width: 99%;
+							}
+						}
+					}
+					
+					// css for about BS view
+					.view-about-big-and-small{
+						
+						@include breakpoint(0px 1199px, true){
+							@include dim-set($w: 100%, $pdim: 1em 0em, $mdim: 10em 0em);
+						}
+					
+						@include breakpoint(1200px, true){
+							@include dim-set($pdim: 0.25em, $mdim: 15em auto);
+						}
+						
+						.view-header > h3{
+							@include breakpoint(0px 1023px, true){
+								@include dim-set($w: 100%, $pdim: 0.25em 0em);
+							}
+							
+							@include breakpoint(1024px, true){
+								@include dim-set($pdim: 0.25em 0em 0.5em, $mdim: 0 0 0 3em);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
