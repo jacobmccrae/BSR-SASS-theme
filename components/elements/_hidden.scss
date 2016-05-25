@@ -1,0 +1,185 @@
+//css for all media
+body.front h1{display: none;}
+
+.messages, .messages--status, .breadcrumb{display: none;}
+
+.l-branding{
+	#block-block-3{
+		@include breakpoint(0px 1023px, true){
+			display: none;
+		}
+		@include breakpoint(1024px, true){
+			& > form > img{
+				display: none;
+			}
+		}
+	}
+
+	#block-block-4{
+		@include breakpoint(480px, true){
+			display: none;
+		}
+	}
+	
+	
+	#block-block-5{
+		@include breakpoint(0px 479px, true){
+			display: none;
+		}
+		
+		@include breakpoint(1024px, true){
+			display: none;
+		}
+	}
+}
+
+.l-region--navigation{
+	#block-menu-menu-mobile-menu{
+		@include breakpoint(0px 479px, true){
+			display: none;
+		}
+		
+		@include breakpoint(768px, true){
+			display: none;
+		}
+	}
+	
+	#block-system-main-menu{
+		@include breakpoint(0px 767px){
+			display: none;
+		}
+	}
+
+	#block-block-6{		
+		@include breakpoint(0px 1199px, true){
+			display: none;
+		}
+	}
+	
+	#block-block-8{		
+		@include breakpoint(0px 1023px, true){
+			display: none;
+		}
+		
+		@include breakpoint(1200px, true){
+			display: none;
+		}
+	}
+	
+	#block-block-9{
+		@include breakpoint(0px 767px){
+			display: none;
+		}
+		
+		@include breakpoint(1024px, true){
+			display: none;
+		}
+	}
+
+	#block-block-10{
+		@include breakpoint(768px, true){
+			display: none;
+		}
+	}
+}
+
+.l-region--sidebar-first{
+	@include breakpoint(0px 1023px, true){
+		display: none;
+	}
+}
+
+.l-footer .l-region--footer{
+	#block-views-footer-view-block .view-footer-view{
+		.view-header{
+			#block-block-1{
+				@include breakpoint(0px 1499px, true){
+					display: none;
+				}
+			}
+		
+			#block-block-7{
+				@include breakpoint(0px 767px, true){
+					display: none;
+				}
+				
+				@include breakpoint(1500px, true){
+					display: none;
+				}
+			}
+			
+			#block-block-11{
+				@include breakpoint(768px, true){
+					display: none;
+				}
+			}
+		}
+	
+		.view-footer .view-power-design{
+			.view-content{
+				display: none;
+			}
+		}
+	}
+}
+
+.page-big-and-small-rescue{
+	.l-region--sidebar-first, .l-region--sidebar-second, .l-region--highlighted{
+		display: none;
+	}
+	
+	.view-big-and-small-rescue{
+		.view-content:first-of-type{					
+			.views-row-1 .views-field-title{
+				display: none;
+			}
+			
+			.views-row-4{
+				@include breakpoint(1024px, true){
+					display: none;
+				}
+			}
+			
+			.views-row-5{
+				@include breakpoint(0px 479px, true){
+					display: none;
+				}
+				
+				@include breakpoint(1024px, true){
+					display: none;
+				}
+			}
+		}
+		
+		.view-footer{
+			.view-adoptable-dogs{
+				@include breakpoint(0px 479px, true){
+					ul.pager{
+						li.pager__item.pager__item--first, li.pager__item.pager__item--previous, li.pager__item.pager__item--next, li.pager__item.pager__item--last{
+							display: none;
+						}
+					}
+				}
+			}
+		}		
+	}
+}
+
+.node-type-dog{
+	.l-main .l-content article{
+		// dog picture
+		div.field.field--name-field-image{
+			div.field__item{
+				img{
+					display: none;
+				}
+			}
+		
+			div.field__item:first-of-type{
+				img{
+					display: block;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,208 @@
+// this file contains all the border settings for the website
+
+%no-border{
+	border: none;
+}
+
+%side-features{
+	border: solid 2px $feat-side-border;
+	@include border-rad(5px, border-top-right-radius);
+	@include border-rad(5px, border-bottom-left-radius);
+}
+
+%side-features-title{
+	border: solid 1px $feat-title-border;
+}
+
+.l-region--navigation{
+	border: solid 1px $main-nav-border;
+	@include box-shadow(5px, 5px, 10px, 5px);
+}
+
+body:not(.page-big-and-small-rescue) .l-main{
+	.l-content{
+		h1{
+			@include border-rad(5px);
+		}
+	}
+
+	.l-region--sidebar-first{
+		#block-views-features-view-block .view-content{
+			.views-row{
+				@extend %side-features;
+			}
+			.views-field-title{
+				@extend %side-features-title;
+			}
+		}
+	}
+}
+
+.page-big-and-small-rescue{
+	.view-big-and-small-rescue{					
+		.view-content:first-of-type{
+			.views-row-2, .views-row-3, .views-row-4, .views-row-5{
+				@extend %side-features;
+				
+				.views-field-title{
+					@extend %side-features-title;
+				}			
+			}		
+		}
+		.view-footer{
+			.view-adoptable-dogs{
+				border-bottom: inset 3px;
+				
+				.view-content{
+					border-top: outset 3px;
+				}
+			}
+
+			.view-recent-adoptions{
+				border: solid 1px $ra-border;
+				@include border-rad(10px, border-top-right-radius);
+				@include border-rad(10px, border-top-left-radius);
+				
+				@include breakpoint(0px 767px){
+					@include border-rad(10px);
+				}
+					
+				.view-header > h3{
+					border: solid 1px $ra-header-border;
+					@include border-rad(10px, border-top-right-radius);
+					@include border-rad(10px, border-top-left-radius);
+				}
+				
+				.view-content{
+					
+					@include breakpoint(1024px, true){
+						border: solid 1px $ra-table-border;
+					}
+					
+					.views-view-grid{
+						td{	
+							@include breakpoint(768px 1023px, true){
+								border-right-style: inset;
+							}
+							
+							@include breakpoint(1024px, true){
+								border-right: outset 1px $ra-cell-border;
+							}
+							
+							&:last-of-type{
+								@extend %no-border;
+							}
+							
+							div.views-field-field-happy-tail-image{
+								img{
+									@include breakpoint(768px 1023px){
+										border: outset 8px $ra-img-border;
+									}
+								}
+							}
+							
+							.views-field-field-happy-tail-description{
+								@include breakpoint(768px 1023px, true){
+									border: solid 1px $ra-desc-border-mobile;
+									@include border-rad(25px);
+								}
+							
+								@include breakpoint(1024px, true){
+									border: solid 1px $ra-desc-border;
+									@include border-rad(5px);
+								}
+							}
+						}
+					}
+				}
+			}
+			
+			.view-about-big-and-small{
+				.view-header > h3{
+					@include breakpoint(0px 1023px, true){
+						border: solid 1px $about-header-border;
+						border-bottom: none;
+					}
+				}
+			
+			
+				.view-content{
+					.views-view-grid{
+						td{								
+							.views-field-body{
+								border: solid 1px $about-body-border;
+								@include border-rad(15px);
+							}
+							
+							.views-field-title{
+								@include breakpoint(0px 1023px, true){
+									@include border-rad(15px, border-top-left-radius);
+									@include border-rad(15px, border-bottom-left-radius);
+									border-right: dashed 1px $about-dname-border;
+								}
+							}
+						}
+						
+						.col-1{
+							@include breakpoint(0px 1023px, true){
+								.views-field-body{
+									@include border-rad(0px, border-top-left-radius);
+									@include border-rad(0px, border-top-right-radius);
+								}
+							
+								.views-field-title{
+									@include border-rad(0px, border-top-left-radius);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.l-footer .l-region--footer{
+	#block-views-footer-view-block .view-footer-view{
+		.view-header{	
+			border-top: ridge 5px $foot-header-border;
+			border-bottom: ridge 5px $foot-header-border;
+		
+			.view-footer-social-menu{
+				.view-header{
+					@extend %no-border;
+				}
+			}
+		}
+		
+		.view-footer{
+			border-top: solid 1px $pd-border;
+			
+			.view-power-design{
+				.view-header{
+					@extend %no-border;
+				}
+			}
+		}
+	}
+	.view-header{
+		@extend %no-border;
+	}
+}
+
+.node-type-dog{
+	.l-main .l-content article{
+		div.field--name-field-dog-status{
+			border: solid 1px $dog-stat-border;
+			@include border-rad(10px, border-top-left-radius);
+			@include border-rad(10px, border-top-right-radius);
+		}
+	
+		// dog description
+		div.field.field--name-body{
+			border: inset 1px $dog-desc-border;
+			@include border-rad(10px);
+			@include box-shadow(-2px, 2px, 15px, $dog-desc-shadow);
+		}
+	}
+}
