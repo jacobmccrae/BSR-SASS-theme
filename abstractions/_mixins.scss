@@ -1,0 +1,35 @@
+/*
+	makes border-radius cross browser compatible
+	recieves:	$radius - single or multiple radius settings
+			$location - optionally sets the location of the border radius setting
+*/
+@mixin border-rad($radius, $location: border-radius) {
+	-webkit-#{$location}: $radius;
+	-moz-#{$location}: $radius;
+	-ms-#{$location}: $radius;
+	-o-#{$location}: $radius;
+	#{$location}: $radius;
+}
+
+// makes box-shadow cross browser compatible
+@mixin box-shadow($hor, $ver, $shadow, $color) {
+  -webkit-box-shadow: $hor $ver $shadow $color;
+     -moz-box-shadow: $hor $ver $shadow $color;
+          box-shadow: $hor $ver $shadow $color;
+}
+
+// makes border-image cross browser compatible
+@mixin border-image($img) {
+  -webkit-border-image:url($img); /* Safari 3.1-5 */
+     -moz-border-image:url($img); /* Firefox 3.5 */
+       -o-border-image:url($img); /* Opera 11-12.1 */
+          border-image:url($img);
+}
+
+@mixin positions($pos, $tp: auto, $bt: auto, $rt: auto, $lt: auto){
+	position: $pos;
+	top: $tp;
+	bottom: $bt;
+	right: $rt;
+	left: $lt;
+}

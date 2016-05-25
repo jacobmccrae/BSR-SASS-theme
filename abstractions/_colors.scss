@@ -1,0 +1,204 @@
+// background patterns
+
+// footer-view
+
+@mixin main-foot-view(){
+	background:
+		linear-gradient(135deg, #708090 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px),
+		linear-gradient(225deg, #708090 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px)0 64px;
+	background-color:#708090;
+	background-size: 64px 128px;
+}
+
+@mixin dog-description(){
+	
+}
+
+.l-branding{
+	background-color: $topbar-bg;
+}
+
+.l-region--navigation{
+	// main menu
+	#block-system-main-menu, #block-menu-menu-mobile-menu{
+		ul.menu > li.leaf{
+			a{
+				color: $main-nav-links;
+			}
+		}
+	}
+}
+
+body:not(.page-big-and-small-rescue){
+	.l-main{
+		.l-content{			
+			h1{
+				background-color: $main-header-bg;
+				color: $main-header-fg;
+			}
+		}
+		
+		.l-region--sidebar-first{
+			#block-views-features-view-block{
+				// feature title placed a bottom of img
+				.views-field-title{
+					background: $feat-title-bg;
+					color: $feat-title-fg;
+				}
+			}
+		}
+	}
+	
+}
+
+.l-footer .l-region--footer{
+	#block-views-footer-view-block .view-footer-view{
+		.view-header{
+			//@include main-foot-view();
+			background-color: $foot-main-bg;
+		
+			// footer contact form css settings
+			.view-contact-form{
+				// title settings
+				header h2{			
+					a{
+						color: $foot-contact-title;
+					}
+				}
+			}
+			
+			.view-footer-social-menu{
+				background: transparent;
+			}
+		}
+		
+		// disclaimer settings
+		.view-footer{
+			.view-power-design{
+				.view-header{
+					background: none;
+					background-color: $pd-bg;
+					color: $pd-fg;
+				}
+			}
+		}
+	}
+	
+	// footer menu css settings
+	#block-menu-menu-footer-menu{
+		ul.menu > li.leaf{			
+			a{
+				color: $foot-menu-link;
+			}
+		}
+	}
+}
+
+.page-big-and-small-rescue{
+	.l-main .l-content{
+		// home page view
+		.view-big-and-small-rescue{
+			// features view
+			.view-content:first-of-type{
+				.views-row-2, .views-row-3, .views-row-4, .views-row-5{
+					// feature title placed a bottom of img
+					.views-field-title{
+						background: $feat-title-bg;
+							
+						a{
+							color: $feat-title-fg;
+						}
+					}
+				}
+			}
+		
+			.view-footer{
+				.view-recent-adoptions{
+					background-color: $ra-main-bg;
+					
+					.view-header > h3{
+						background-color: $ra-header-bg;
+						color: $ra-header-fg;
+					}
+					
+					.view-content .views-view-grid{								
+						td{
+							@include breakpoint(0px 479px, true){
+								background-color: $ra-cell-border-mobile;
+							}
+						
+							// centered title
+							.views-field-title{
+								@include breakpoint(0px 479px, true){
+									color: $ra-dog-text-small-mobile;
+								}
+								@include breakpoint(480px 767px, true){
+									color: $ra-dog-text-mobile;
+								}
+							}
+							
+							// centered date
+							.views-field-field-date-adopted{
+								@include breakpoint(0px 479px, true){
+									color: $ra-dog-text-small-mobile;
+								}
+								@include breakpoint(480px 767px, true){
+									color: $ra-dog-text-mobile;
+								}
+							}
+						}
+					}
+				}
+				
+				.view-about-big-and-small{
+					.view-header > h3{
+						@include breakpoint(0px 1023px, true){
+							background-color: $about-header-bg;
+							color: $about-header-fg;
+						}
+					}
+					
+					.view-content .views-view-grid{
+						td{
+							.views-field-title{
+								@include breakpoint(0px 1023px, true){
+									background-color: $about-dname-bg;
+						
+									a{
+										color: $about-dname-fg;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.node-type-dog{
+	.l-main .l-content article{
+		
+		// all dog fields
+		div.field{
+			// dog labels
+			.field__label{
+				color: $dog-label;
+			}
+		}
+		
+		div.field.field--name-field-dog-status{
+			background-color: $dog-stat-bg;
+			color: $dog-stat-fg;
+		}
+		
+		// dog description
+		div.field.field--name-body{
+			@include breakpoint(0px 579px, true){
+				background-color: $dog-desc-bg;
+				color: $dog-desc-fg;
+			}
+		}
+	}
+}

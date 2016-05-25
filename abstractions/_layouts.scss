@@ -1,0 +1,10 @@
+@mixin triple-layout($tag){
+	@include layout(3){
+		#{$tag}{
+			@include float-span(1);
+			&:nth-child(3n){
+				@include float-span(1, 'last');
+			}
+		}
+	}
+}

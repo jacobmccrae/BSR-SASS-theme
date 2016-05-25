@@ -1,0 +1,42 @@
+// resets the margin and padding to 0
+@mixin dim-reset($marg: true, $pad: true){
+	@if marg	{ margin: $def; }
+	@if pad 	{ padding: $def; }
+}
+
+/*
+	sets the margins
+ 	receives: $mdim - margin dimensions
+			$mloc - optionally specified margin location
+*/
+@mixin margin-set($mdim, $mloc: margin){
+	#{$mloc}: $mdim;
+}
+
+/* 
+	sets the padding
+	receives: $pdim - padding dimensions
+			$ploc - optionally specified padding location
+*/
+@mixin padding-set($pdim, $ploc: padding){
+	#{$ploc}: $pdim;
+}
+
+/* 
+	sets the width, height, padding, and margin of an element in one swoop
+	recieves:	$w - optionally specified width
+			$h - optionally specified height
+			$mdim - only used when $marg set to true, margin dimensions
+			$pdim - only used when $pad set to true, padding dimensions
+			$mloc - only used when $marg set to true, margin location
+			$ploc - only used when $pad set to true, padding location
+			$marg - can optionally set to false if no need to set margin
+			$pad - can optionally set to false if no need to set padding
+*/
+@mixin dim-set($w: auto, $h: auto, $mdim: $def, $pdim: $def, $mloc: margin, $ploc: padding, $marg: true, $pad: true){
+	width: $w;
+	height: $h;
+	
+	@if marg	{ @include margin-set($mdim, $mloc); }
+	@if pad 	{ @include padding-set($pdim, $ploc); }
+}
