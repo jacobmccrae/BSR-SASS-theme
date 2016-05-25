@@ -1,0 +1,290 @@
+// Import external libraries.
+@import "compass";
+@import "breakpoint";
+@import "singularitygs";
+@import "toolkit";
+
+// Import variables, abstractions, base styles and components using globbing.
+//
+// Globbing will always import files alphabetically. Optimally, all your
+// components should be self-contained and explicit enough to not have any
+// contained styles leak into unrelated components: The import order should not
+// affect the result.
+//
+// If there are variables, functions or mixins that depend on each other and
+// therefore need to be imported in a specific order you can import them
+// directly. Variables-, function- or mixin providing partials should never
+// output any styles themselves: Importing them multiple times to resolve
+// dependencies shouldn't be a problem.
+@import "variables/**/*";
+@import "abstractions/**/*";
+@import "base/**/*";
+@import "components/**/*";
+
+body{
+	min-width: 360px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+	 /* Safari and Chrome tablet only override */
+	.l-page {
+		overflow-x: hidden;
+	}
+}
+
+// resets
+p{
+	@include dim-reset;
+}
+
+//top bar
+.l-branding{
+	width: 100%;
+	
+	@include breakpoint(480px 767px, true){
+		#block-block-5{
+			position: relative;
+			-webkit-transform: translate3d(0,0,0);
+			
+			form{
+				@include positions(absolute, $lt: 5%);
+			}
+				
+			// social media icons
+			div.block__content > p{
+				@include positions(absolute, $tp: 10%, $rt: 1%);
+				
+				width: 30%;
+				@include breakpoint(552px 767px, true){
+					width: 25%;
+				}
+			}
+		}
+	}
+	
+	@include breakpoint(768px 1023px, true){
+		@include layout(3){
+			#block-block-5{
+				form{
+					@include grid-span(1, 1);
+				}
+				
+				// social media icons
+				div.block__content > p{
+					@include grid-span(2, 2.5);
+				}
+			}
+		}
+	}
+	
+	@include breakpoint(1024px, true){
+		@include layout(6){
+			#block-block-3{
+				form{
+					@include grid-span(3, 1);
+				}
+				
+				// social media icons
+				div.block__content > p{
+					@include grid-span(2, 5);
+				}
+			}
+		}
+	}
+	
+	// paypal donate button
+	#block-block-3, #block-block-4, #block-block-5{
+		height: 45px;
+		position: relative;
+		-webkit-transform: translate3d(0,0,0);
+		
+		form{
+			position: relative;
+			-webkit-transform: translate3d(0,0,0);
+			
+			height: 35px;
+			input{
+				@include positions(absolute, $bt: 3%);
+				
+				@include breakpoint(768px 1023px, true){
+					left: 8%;
+				}
+				
+				@include breakpoint(1024px, true){
+					left: 9%;
+				}
+			}
+		}
+		
+		// social media icons
+		div.block__content{
+			& > p{
+				@include breakpoint(768px 1023px, true){
+					@include padding-set(0.3em 0 0 11.5em);
+				}
+				
+				@include breakpoint(1024px, true){
+					@include padding-set(0.25em 0 0 10em);
+				}
+				@include triple-layout(img);
+			}
+		}
+	}
+}
+
+// global settings for the footer
+.l-footer{
+	.l-region--footer{
+		clear: both;
+		overflow: auto;
+		
+		@include padding-set(0.25em auto 0em);
+	}
+}
+
+body:not(.page-big-and-small-rescue){
+	.l-main{
+		@include padding-set(0.5em 0 2em 0);
+		min-height: 500px;
+
+		@include breakpoint(0px 767px, true){
+			.l-content{
+				width: 100%;
+				article > div > div.field--name-field-news-video > div > div > div > div > iframe{
+					width: 100%;
+				}
+			}
+		}
+		
+		@include breakpoint(1024px 1199px, true){
+			@include layout(6){
+				.l-content{
+					@include grid-span(4, 1);
+				}
+				
+				.l-region--sidebar-first{
+					@include grid-span(1.75, 5.5);
+				}
+			}
+		}
+		
+		@include breakpoint(1200px 1499px, true){
+			@include layout(9){
+				.l-content{
+					@include grid-span(5.5, 1.25);
+				}
+				
+				.l-region--sidebar-first{
+					@include grid-span(2.2, 7.5);
+				}
+			}
+		}
+		
+		@include breakpoint(1500px, true){
+			@include layout(12){ 
+				.l-content{
+					@include grid-span(7, 1.75);
+				}
+				
+				.l-region--sidebar-first{
+					@include grid-span(2.25, 10);
+				}
+			}
+		}
+			
+		.l-content{
+			padding-bottom: 1.5em;
+			
+			h1{
+				@include dim-set($w: 100%, $pdim: 0.1em 0.25em 0.15em, $marg: false);
+			}
+		}
+			
+		.l-region--sidebar-first{
+			padding-top: 0.75em;
+			
+			#block-views-features-view-block{
+				width: 70%;
+				
+				.views-row{
+					position: relative;
+					-webkit-transform: translate3d(0,0,0);
+					
+					@include breakpoint(1024px 1199px, true){
+						@include dim-set($h: 200px, $mdim: 2em, $mloc: margin-bottom, $pad: false);
+					}
+					
+					@include breakpoint(1200px, true){
+						@include dim-set($mdim: 2.5em, $mloc: margin-bottom, $pad: false);
+					}
+					
+					@include breakpoint(1200px 1499px, true){
+						height: 220px;
+					}
+					
+					@include breakpoint(1500px, true){
+						height: 240px;
+					}
+					
+					// feature title placed a bottom of img
+					.views-field-title{
+						@include positions(absolute, $bt: 0%);					
+						@include dim-set($w: 100%, $pdim: 0.25em, $marg: false);
+					}
+					
+					.views-field-field-image img{
+						@include breakpoint(1024px 1199px, true){
+							@include dim-set($w: 280px, $h: 180px, $pad: false, $marg: false);
+						}
+					
+						@include breakpoint(1200px 1499px, true){
+							@include dim-set($w: 300px, $h: 200px, $pad: false, $marg: false);
+						}
+					
+						@include breakpoint(1500px, true){
+							@include dim-set($w: 200px, $h: 230px, $pad: false, $marg: false);
+						}
+					}
+				}
+				
+				.views-row-last{
+					clear: right;
+				}
+			}
+		}
+	}
+	
+	.l-footer{
+		.l-region--footer{
+			height: auto;
+		}
+	}
+}
+
+// rendered after the default footer settings found in the _tables.scss file
+.page-big-and-small-rescue{
+	.l-footer .l-region--footer{
+		#block-views-footer-view-block .view-footer-view{
+			div.view-content{
+				height: auto;
+				
+				.views-view-grid{
+					@include dim-set($pdim: 1em, $mdim: 5em auto);
+					td > div{
+						width: auto;
+					}
+				}
+				
+				tr.row-2.row-last{
+					td.col-1.col-first > div{
+						@include dim-set($mdim: 2em, $mloc: margin-right, $pad: false);
+					}
+					
+					td.col-2.col-last > div{
+						@include dim-set($mdim: 1em, $mloc: margin-right, $pad: false);
+					}
+				}
+			}
+		}
+	}
+}
