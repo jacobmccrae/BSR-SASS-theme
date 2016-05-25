@@ -1,0 +1,94 @@
+// Universal Colors
+$default-lt: #FFFFFF;
+$default-dk: #000000;
+$main-theme: #CC0000;
+$nav-links: $default-dk;
+
+// Top Bar Colors
+$topbar-bg: $main-theme;
+
+
+// Main Navigation Colors
+$main-nav-links: $nav-links;
+$main-nav-border: $default-lt;
+
+
+// Content Colors
+$main-header-bg: $main-theme;
+$main-header-fg: $default-lt;
+
+
+// Features View Colors
+$feat-side-border: rgba(0, 0, 0, 0.8);
+
+$feat-title-border: rgba(255, 255, 255, 0.4);
+$feat-title-bg: rgba(63, 76, 107, 1);
+$feat-title-fg: $default-lt;
+
+// Adoptable Dogs View Colors
+
+
+//Recent Adoptions View Colors
+$ra-dark: #696969;
+$ra-med: #DCDCDC;
+$ra-lite: $default-lt;
+
+$ra-main-bg: $ra-med;
+$ra-border: #2F4F4F;
+$ra-header-border: $ra-dark;
+$ra-header-bg: $ra-dark;
+$ra-header-fg: $ra-lite;
+
+$ra-table-border: #2F4F4F;
+$ra-cell-border: $ra-dark;
+$ra-cell-border-mobile: $ra-lite;
+
+$ra-desc-bg: $ra-lite;
+$ra-desc-border: $default-dk;
+$ra-desc-border-mobile: $ra-lite;
+
+
+$ra-dog-text-small-mobile: $default-dk;
+$ra-dog-text-mobile: $ra-lite;
+
+$ra-img-border: $main-theme;
+
+
+// About Big and Small View Colors
+$about-header-bg: $main-theme;
+$about-header-fg: $default-lt;
+$about-header-border: $default-dk;
+
+$about-body-border: $default-dk;
+
+$about-dname-bg: #DCDCDC;
+$about-dname-fg: $default-dk;
+$about-dname-border: $default-dk;
+
+
+////////// Footer View Colors /////////
+$foot-main-bg: #87CEFA;
+$foot-header-border: $main-theme;
+$foot-contact-title: $default-dk;
+
+$foot-menu-link: $nav-links;
+
+//Power Design View Colors
+$pd-bg: $main-theme;
+$pd-fg: $default-lt;
+$pd-border: $default-dk;
+ 
+ 
+// Dog Page Colors
+ 
+$dog-label: $main-theme;
+$dog-item: $default-dk;
+
+$dog-stat-bg: $main-theme;
+$dog-stat-fg: $default-lt;
+$dog-stat-border: $default-lt;
+
+$dog-desc-bg: rgba(0, 0, 0, 0.7);
+$dog-desc-fg: $default-lt;
+$dog-desc-border: $default-lt;
+$dog-desc-shadow: $default-dk;
